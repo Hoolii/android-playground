@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.4.0'
     }
 }
 
@@ -23,4 +24,5 @@ task clean(type: Delete) {
 ext {
     supportLibVersion = '25.1.0'
     parcelablePleaseVersion = '1.0.2'
+    retrofitVersion = '2.1.0'
 }
