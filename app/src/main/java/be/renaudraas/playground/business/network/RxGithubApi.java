@@ -1,14 +1,15 @@
 package be.renaudraas.playground.business.network;
 
+
 import java.util.List;
 
 import be.renaudraas.playground.business.network.response.RepositoryResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import rx.Observable;
 
-public interface GithubApi {
+public interface RxGithubApi {
 
     @GET("users/{user}/repos")
-    Call<List<RepositoryResponse>> getRepositories(@Path("user") String user);
+    Observable<List<RepositoryResponse>> getRepositories(@Path("user") String user);
 }

@@ -14,7 +14,7 @@ import be.renaudraas.playground.business.model.Repository;
 import be.renaudraas.playground.ui.BaseFragment;
 import be.renaudraas.playground.util.DebugLog;
 
-public class GithubFragment extends BaseFragment {
+public class GithubRxFragment extends BaseFragment {
 
     private ViewHolder viewHolder;
 
@@ -32,7 +32,7 @@ public class GithubFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        GithubPresenter githubPresenter = new GithubPresenter();
+        GithubRxPresenter githubPresenter = new GithubRxPresenter();
         githubPresenter.attachView(new GithubMvpView() {
             @Override
             public void onLoading(boolean isLoading) {

@@ -4,9 +4,9 @@ import java.util.List;
 
 import be.renaudraas.playground.business.model.Repository;
 import be.renaudraas.playground.business.usecase.GetRepositoriesUseCase;
-import be.renaudraas.playground.util.mvp.BaseMvpPresenter;
+import be.renaudraas.playground.util.mvp.BaseRxMvpPresenter;
 
-public class GithubPresenter extends BaseMvpPresenter<GithubMvpView, List<Repository>> {
+public class GithubRxPresenter extends BaseRxMvpPresenter<GithubMvpView, List<Repository>> {
 
     void fetchRepositories(String user) {
         getView().onLoading(true);

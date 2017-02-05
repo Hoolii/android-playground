@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.feature.github.GithubActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,6 +21,14 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.feature.github.GithubRxActivity"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".ui.feature.github.GithubTaskActivity"
+            android:screenOrientation="sensorPortrait" />
 
     </application>
 

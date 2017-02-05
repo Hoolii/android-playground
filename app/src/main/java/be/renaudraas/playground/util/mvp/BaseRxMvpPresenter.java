@@ -8,12 +8,12 @@ import be.renaudraas.playground.util.rx.SubscriberAdapter;
 import rx.Observable;
 import rx.Subscriber;
 
-public abstract class BaseMvpPresenter<V extends MvpView, M> extends MvpNullObjectBasePresenter<V> {
+public abstract class BaseRxMvpPresenter<V extends MvpView, M> extends MvpNullObjectBasePresenter<V> {
 
     private Subscriber<M> subscriber;
     private Observable.Transformer<? super M, ? extends M> scheduler;
 
-    public BaseMvpPresenter() {
+    public BaseRxMvpPresenter() {
         this.scheduler = new AndroidSchedulerTransformer<M>();
     }
 
@@ -41,22 +41,22 @@ public abstract class BaseMvpPresenter<V extends MvpView, M> extends MvpNullObje
         subscriber = new SubscriberAdapter<M>() {
             @Override
             public void onCompleted() {
-                BaseMvpPresenter.this.onCompleted();
+                BaseRxMvpPresenter.this.onCompleted();
             }
 
             @Override
             public void onError(Throwable e) {
-                BaseMvpPresenter.this.onError(e);
+                BaseRxMvpPresenter.this.onError(e);
             }
 
             @Override
             public void onNext(M m) {
-                BaseMvpPresenter.this.onNext(m);
+                BaseRxMvpPresenter.this.onNext(m);
             }
 
             @Override
             public void onTerminated(boolean isSuccess) {
-                BaseMvpPresenter.this.onTerminated(isSuccess);
+                BaseRxMvpPresenter.this.onTerminated(isSuccess);
                 unsubscribe();
             }
         };

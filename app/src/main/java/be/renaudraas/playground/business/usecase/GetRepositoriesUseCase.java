@@ -5,7 +5,7 @@ import java.util.List;
 
 import be.renaudraas.playground.business.mapper.RepositoryMapper;
 import be.renaudraas.playground.business.model.Repository;
-import be.renaudraas.playground.business.network.ApiManager;
+import be.renaudraas.playground.business.network.RxApiManager;
 import be.renaudraas.playground.util.ListUtils;
 import rx.Observable;
 
@@ -19,7 +19,7 @@ public class GetRepositoriesUseCase implements UseCase<List<Repository>> {
 
     @Override
     public Observable<List<Repository>> execute() {
-        return ApiManager.getInstance().getGithubApi().getRepositories(user)
+        return RxApiManager.getInstance().getGithubApi().getRepositories(user)
                 .map(repositoryResponses -> ListUtils.convert(repositoryResponses, new RepositoryMapper()));
     }
 }
