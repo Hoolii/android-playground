@@ -51,3 +51,5 @@ dependencies {
     // Mosby MVP
     compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
